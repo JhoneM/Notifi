@@ -1,7 +1,9 @@
 package com.notifi.infrastructure.web.dto;
 
 import jakarta.validation.constraints.NotBlank;
+import lombok.Data;
 
+@Data
 public class NotificationRequestDTO {
     @NotBlank(message = "clientId is required")
     private String clientId;
@@ -22,38 +24,6 @@ public class NotificationRequestDTO {
         this.clientId = clientId;
         this.channel = channel;
         this.messageBody = messageBody;
-        this.contentType = contentType;
-    }
-
-    public String getClientId() {
-        return clientId;
-    }
-
-    public void setClientId(String clientId) {
-        this.clientId = clientId;
-    }
-
-    public String getChannel() {
-        return channel;
-    }
-
-    public void setChannel(String channel) {
-        this.channel = channel;
-    }
-
-    public String getMessageBody() {
-        return messageBody;
-    }
-
-    public void setMessageBody(String messageBody) {
-        this.messageBody = messageBody;
-    }
-
-    public String getContentType() {
-        return contentType;
-    }
-
-    public void setContentType(String contentType) {
         this.contentType = contentType;
     }
 }

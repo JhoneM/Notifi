@@ -26,10 +26,6 @@ public final class NotificationContent {
         return body;
     }
 
-    public ContentType getContentType() {
-        return contentType;
-    }
-
     /**
      * Helper method to check if content is HTML.
      *
@@ -39,25 +35,4 @@ public final class NotificationContent {
         return contentType == ContentType.HTML;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        NotificationContent that = (NotificationContent) o;
-        return Objects.equals(body, that.body) &&
-               contentType == that.contentType;
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(body, contentType);
-    }
-
-    @Override
-    public String toString() {
-        return "NotificationContent{" +
-                "body='" + body + '\'' +
-                ", contentType=" + contentType +
-                '}';
-    }
 }

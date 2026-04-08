@@ -81,26 +81,4 @@ public final class ClientReference {
     public NotificationChannel getPreferredChannel() {
         return preferredChannel;
     }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        ClientReference that = (ClientReference) o;
-        return Objects.equals(clientId, that.clientId) &&
-               preferredChannel == that.preferredChannel;
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(clientId, preferredChannel);
-    }
-
-    @Override
-    public String toString() {
-        return "ClientReference{" +
-                "clientId='" + clientId + '\'' +
-                ", preferredChannel=" + preferredChannel +
-                '}';
-    }
 }

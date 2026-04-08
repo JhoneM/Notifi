@@ -2,12 +2,12 @@ package com.notifi.application;
 
 import com.notifi.domain.channel.NotificationChannel;
 import com.notifi.domain.model.ContentType;
+import lombok.Data;
+
 import java.util.Objects;
 
-/**
- * Data Transfer Object representing a notification request.
- * Carries information from the application layer to the domain.
- */
+
+@Data
 public final class NotificationRequest {
     private final String clientId;
     private final NotificationChannel preferredChannel;
@@ -31,31 +31,5 @@ public final class NotificationRequest {
         this.preferredChannel = Objects.requireNonNull(preferredChannel, "preferredChannel cannot be null");
         this.messageBody = Objects.requireNonNull(messageBody, "messageBody cannot be null");
         this.contentType = Objects.requireNonNull(contentType, "contentType cannot be null");
-    }
-
-    public String getClientId() {
-        return clientId;
-    }
-
-    public NotificationChannel getPreferredChannel() {
-        return preferredChannel;
-    }
-
-    public String getMessageBody() {
-        return messageBody;
-    }
-
-    public ContentType getContentType() {
-        return contentType;
-    }
-
-    @Override
-    public String toString() {
-        return "NotificationRequest{" +
-                "clientId='" + clientId + '\'' +
-                ", preferredChannel=" + preferredChannel +
-                ", messageBody='" + messageBody + '\'' +
-                ", contentType=" + contentType +
-                '}';
     }
 }

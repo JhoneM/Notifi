@@ -70,23 +70,4 @@ public class Notification {
     public void markSent() {
         this.status = NotificationStatus.SENT;
     }
-
-    /**
-     * Marks this notification as failed.
-     * Transitions status from PENDING to FAILED.
-     */
-    public void markFailed() {
-        this.status = NotificationStatus.FAILED;
-    }
-
-    @Override
-    public String toString() {
-        return "Notification{" +
-                "id='" + id + '\'' +
-                ", recipient=" + recipient +
-                ", content=" + content +
-                ", status=" + status +
-                ", createdAt=" + createdAt +
-                '}';
-    }
 }
